@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Задание 2</title>
+</head>
+
+<!-- Вы разрабатываете приложение для отображения и сортировки списка товаров. У вас есть массив объектов products, где каждый объект представляет товар с его названием и ценой. Вам необходимо отобразить список товаров и предоставить пользователю возможность сортировать товары по цене (по возрастанию и по убыванию). -->
+
+<body>
+    <div id="app">
+        <select id="sort" v-model="sortBy">
+            <option value="">-- Не выбрано --</option>
+            <option value="priceAsc">По возрастанию</option>
+            <option value="priceDesc">По убыванию</option>
+        </select>
+        <ul>
+            <li v-for="product in sortedProducts" :key="product.id">{{product.name}} - {{product.price}} рублей.</li>
+        </ul>
+    </div>
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = {
+            data() {
+                return {
+                    sortBy: "priceAsc",
+                    products: [
+                        {
+                            id: 1,
+                            name: "Book",
+                            price: 400,
+                        },                        
+                        {
+                            id: 2,
+                            name: "Chair",
+                            price: 700,
+                        },                        
+                        {
+                            id: 3,
+                            name: "Glass",
+                            price: 500,
+                        },                        
+                        {
+                            id: 4,
+                            name: "Table",
+                            price: 1500,
+                        },
+                    ],
+                }
+             },
+             computed: {
+                sortedProducts() {
+                    if (this.sortBy === "priceAsc") {
+                        return this.products.slice().sort((a, b) => a.price - b.price);
+                    } else if (this.sortBy === "priceDesc") {
+                        return this.products.slice().sort((a, b) => b.price - a.price);
+                    }
+                }
+            }
+        }
+        Vue.createApp(app).mount("#app");
+    </script>
+</body>
+
+</html>

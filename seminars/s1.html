@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seminar 1</title>
+</head>
+
+<!-- 1. Создать параграф, внутри которого будет отображаться текст “Товаров в корзине 0”. Создать кнопку “Купить”, при клике на которую, значение внутри параграфа будет увеличиваться на 1, при повторном нажатии на эту кнопку, счетчик не становится  больше, добавить 4 таких кнопки. При нажатии на кнопку купить, необходимо чтобы текст внутри кнопки поменялся на “Товар в Корзине”.
+
+    2. Создать две кнопки “Мне исполнилось 14 лет” и “Мне еще нет 14 лет”. Если пользователь нажимает на первую кнопку, то должен отобразиться текст. “Можете заказать товар”. Если пользователь нажимает на вторую кнопку, отображается текст “Доступ закрыт”.
+
+    3. Создать кнопку “Показать еще” при клике на которую появляется контент под кнопкой, при повторном клике, контент необходимо скрыть. Добавить анимацию появления текстового блока.
+
+    4. Создайте кнопку "Генерировать случайное число". При клике на кнопку должно отображаться случайное число в заданном диапазоне (например, от 1 до 10). При клике на кнопку, если полученное значение меньше 5, необходимо вывести на страницу, “Число меньше 5”. Если число от 5 до 9, необходимо вывести “Число от 5 до 9”. Если число равно 10, необходимо вывести “Число равно 10”.
+ -->
+
+
+<body>
+    <style>
+        .animation {
+            animation: visible 1s ease-in-out;
+        }
+
+        @keyframes visible {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+    <div id="app">
+        <!-- 1 -->
+        <!-- <p>Товаров в корзине: {{ countItem }}</p> -->
+        <!-- <button @click="addCounter">{{ btn }}</button> -->
+
+        <!-- 2 -->
+        <!-- <button @click="canBuy = !canBuy">Мне исполнилось 14 лет</button><br><br>
+        <button @click="canBuy = !canBuy">Мне ещё нет 14 лет</button>
+        <p v-if="canBuy">Можете заказать товар</p>
+        <p v-else="!canBuy">Доступ закрыт</p> -->
+
+        <!-- 3 -->
+        <!-- <button @click="show = !show">Показать ещё</button>
+        <p class="animation" v-show="show">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Iusto delectus repudiandae, eos officia ducimus id. Et hic veritatis velit architecto? Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum, obcaecati.</p> -->
+
+        <!-- 4 -->
+        <button @click="random">Генерировать случайное число</button>
+        <p>{{ randomNumber }}</p>
+        <p v-if="randomNumber < 5">Число меньше 5</p>
+        <p v-else-if="randomNumber > 5 && randomNumber < 10">Число от 5 до 9</p>
+        <p v-else="randomNumber > 9">Число равно 10</p>
+    </div>
+
+    <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+    <script>
+        const app = {
+            data() {
+                return {
+                    hello: "Hello Vue",
+                    btn: "Купить",
+                    countItem: 0,
+                    canBuy: false,
+                    show: false,
+                    randomNumber: 0,
+                }
+            },
+            methods: {
+                addCounter() {
+                    if (this.countItem < 1) {
+                        this.countItem++;
+                        this.btn = 'Товар в корзине';
+                    }
+                },
+                random() {
+                    this.randomNumber = Math.floor(Math.random() * 10 + 1);
+                }
+            },
+        };
+        Vue.createApp(app).mount('#app');
+    </script>
+</body>
+
+</html>
