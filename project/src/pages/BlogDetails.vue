@@ -8,9 +8,9 @@
 </template>
 
 <script>
-    import HeaderComponent from './blocks/HeaderComponent.vue';
-    import ArticlesComponent from './blocks/ArticlesComponent.vue';
-    import FooterComponent from './blocks/FooterComponent.vue';
+    import HeaderComponent from '../components/HeaderComponent.vue';
+    import ArticlesComponent from '../components/ArticlesComponent.vue';
+    import FooterComponent from '../components/FooterComponent.vue';
 
 
     export default {
@@ -26,16 +26,3 @@
         },
     }
 </script>
-
-<style lang="scss" scoped>
-    .banner-img {
-        width: 100vw;
-        max-width: 1920px;
-        margin-bottom: 200px;
-    }
-
-    .center {
-        padding-left: calc(50% - 1200px / 2);
-        padding-right: calc(50% - 1200px / 2);
-    }
-</style>

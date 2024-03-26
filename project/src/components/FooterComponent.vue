@@ -25,19 +25,19 @@
             <h3 class="footer__title font-serif">Pages</h3>
             <nav class="footer__nav">
                 <ul class="footer__ul">
-                    <li><a class="footer__li font-jost" href="#">Home</a></li>
-                    <li><a class="footer__li font-jost" href="#">Project</a></li>
-                    <li><a class="footer__li font-jost" href="#">Blog</a></li>
+                    <li><a class="footer__li" href="#">Home</a></li>
+                    <li><a class="footer__li" href="#">Project</a></li>
+                    <li><a class="footer__li" href="#">Blog</a></li>
                 </ul>
             </nav>
         </div>
         <div class="footer__right">
-            <h3 class="footer__title font-serif" style="margin-bottom: 26px;">Contact</h3>
-            <p class="footer__contact font-jost" style="line-height: 33px;">55 East Birchwood Ave. Brooklyn, New
+            <h3 class="footer__title font-serif contact">Contact</h3>
+            <p class="footer__contact adress">55 East Birchwood Ave. Brooklyn, New
                 York 11201</p>
-            <p class="footer__contact font-jost">contact@interno.com
+            <p class="footer__contact contact">contact@interno.com
             </p>
-            <p class="footer__contact font-jost">(123) 456 - 7890</p>
+            <p class="footer__contact">(123) 456 - 7890</p>
 
         </div>
     </footer>
@@ -53,87 +53,6 @@
     }
 </script>
 
-<style lang="scss" scoped>
-    * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-    }
+<style lang="scss">
 
-    a {
-        text-decoration: none;
-    }
-
-    li {
-        list-style-type: none;
-    }
-
-    .center {
-        padding-left: calc(50% - 1200px / 2);
-        padding-right: calc(50% - 1200px / 2);
-    }
-
-    .font-serif {
-        font-family: "DM Serif Display", serif;
-        font-weight: 400;
-        font-style: normal;
-        color: #292F36;
-    }
-
-    .font-jost {
-        font-family: "Jost", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-        color: #4D5053;
-        font-size: 22px;
-        line-height: 33px;
-        letter-spacing: 1%;
-    }
-
-    .footer {
-        display: flex;
-        justify-content: space-between;
-        align-items: start;
-        margin-bottom: 134px;
-
-        &__medias {
-            display: flex;
-            gap: 54px;
-            align-items: center;
-        }
-
-        &__left {
-            max-width: 393px;
-
-            &_text {
-                margin-top: 18px;
-                margin-bottom: 32px;
-            }
-        }
-
-        &__center {
-            max-width: 125px;
-        }
-
-        &__title {
-            font-size: 25px;
-            line-height: 31.25px;
-            margin-bottom: 9px;
-        }
-
-        &__li {
-            line-height: 66px;
-            font-size: 22px;
-        }
-
-        &__right {
-            max-width: 258px;
-        }
-
-        &__contact {
-            font-size: 22px;
-            line-height: 66px;
-        }
-    }
 </style>

@@ -12,7 +12,7 @@
         <div>
             <p class="tag-title font-serif">Tags</p>
             <div class="tags">
-                <button @click="filterArticle(tag)" class="tag font-jost" v-for="tag in tags" :key="tag.id">
+                <button @click="filterArticle(tag)" class="tag font-jost" v-for="tag in tags" :key="tag.id" :class="tag === currentTag ? 'currentTag' : ''">
                 {{ tag }}
             </button>
             </div>
@@ -118,6 +118,8 @@
                     
                 ],
                 tags: ["Kitchen", "Bedroom", "Building", "Livingroom"],
+                currentTag: "Kitchen",
+
             }
         },
 
@@ -127,14 +129,33 @@
                 this.articles.forEach(article => {
                     if(article.tag === currentTag) {
                     this.tagArticle.push(article);
+                    this.currentTag = currentTag;
                     }
                 });
-            }
+            },
         },
     }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+    
+    .font-serif {
+        font-family: "DM Serif Display", serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #292F36;
+    }
+
+    .font-jost {
+        font-family: "Jost", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        color: #4D5053;
+        font-size: 22px;
+        line-height: 33px;
+        letter-spacing: 1%;
+    }
     .articles-box {
         display: flex;
         gap: 52px;
@@ -174,6 +195,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 11px;
+        
     }
 
     .tag {
@@ -186,6 +208,7 @@
         letter-spacing: 2%;
         text-align: center;
         cursor: pointer;
+        border: 1px solid transparent;
     }
     
     .tag:hover {
@@ -193,33 +216,25 @@
         color: #F4F0EC;
     }
 
-    .tag:active {
+    .currentTag {
         background-color: #292F36;
         color: #F4F0EC;
+        font-size: 18px;
+        line-height: 22.5px;
+        letter-spacing: 2%;
+        text-align: center;
+        cursor: pointer;
+        padding: 9px 30px 9px 30px;
+        border-radius: 10px;
+        
     }
 
     .tag-title {
         font-size: 25px;
         line-height: 31.25px;
         letter-spacing: 2%;
+        margin-bottom: 24px;
     }
 
-    .font-serif {
-        font-family: "DM Serif Display", serif;
-        font-weight: 400;
-        font-style: normal;
-        color: #292F36;
-    }
-
-    .font-jost {
-        font-family: "Jost", sans-serif;
-        font-optical-sizing: auto;
-        font-weight: 400;
-        font-style: normal;
-        color: #4D5053;
-        font-size: 22px;
-        line-height: 33px;
-        letter-spacing: 1%;
-    }
 
 </style>

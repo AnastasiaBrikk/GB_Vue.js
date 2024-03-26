@@ -1,0 +1,33 @@
+
+.header {
+    &__box {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 44px;
+        margin-bottom: 57px;
+    }
+
+    &__logo {
+        width: 177px;
+        cursor: pointer;
+    }
+
+}
+
+.nav__list {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: center;
+
+    & a {
+        color: #292F36;
+        font-family: "Jost", sans-serif;
+        font-optical-sizing: auto;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 20px;
+        line-height: 25px;
+    }
+}
