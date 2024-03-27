@@ -24,238 +24,24 @@
 </template>
 
 <script>
+import { mapState, mapMutations, mapActions } from 'vuex';
 export default {
     data() {
         return {
             btn: require('@/assets/img/projects-item-btn.svg'),
-            tagProject: [
-                {
-                    id: 1,
-                    img: require('@/assets/img/project-tag2-img1.jpg'),
-                    title: 'Minimal Bedroom',
-                    category: 'Decor / Artchitecture',
-                    type: 'Bedroom',
-                },
-                {
-                    id: 2,
-                    img: require('@/assets/img/project-tag2-img2.jpg'),
-                    title: 'Classic Minimal Bedroom',
-                    category: 'Decor / Artchitecture',
-                    type: 'Bedroom',
-                },
-                {
-                    id: 3,
-                    img: require('@/assets/img/project-tag2-img3.jpg'),
-                    title: 'Minimal Bedroom table',
-                    category: 'Decor / Artchitecture',
-                    type: 'Bedroom',
-                },
-                {
-                    id: 4,
-                    img: require('@/assets/img/project-tag2-img4.jpg'),
-                    title: 'Modern Bedroom',
-                    category: 'Decor / Artchitecture',
-                    type: 'Bedroom',
-                },
-                {
-                    id: 5,
-                    img: require('@/assets/img/project-tag2-img5.jpg'),
-                    title: 'Minimal Bedroom',
-                    category: 'Decor / Artchitecture',
-                    type: 'Bedroom',
-                },
-                {
-                    id: 6,
-                    img: require('@/assets/img/project-tag2-img6.jpg'),
-                    title: 'Modern Bedroom',
-                    category: 'Decor / Artchitecture',
-                    type: 'Bedroom',
-                },
-                {
-                    id: 7,
-                    img: require('@/assets/img/project-tag2-img7.jpg'),
-                    title: 'System Table',
-                    category: 'Decor / Artchitecture',
-                    type: 'Bedroom',
-                },
-                {
-                    id: 8,
-                    img: require('@/assets/img/project-tag2-img8.jpg'),
-                    title: 'Modern Bedroom',
-                    category: 'Decor / Artchitecture',
-                    type: 'Bedroom',
-                },
-            ],
-            projects: [{
-                id: 1,
-                img: require('@/assets/img/project-tag2-img1.jpg'),
-                title: 'Minimal Bedroom',
-                category: 'Decor / Artchitecture',
-                type: 'Bedroom',
-            },
-            {
-                id: 2,
-                img: require('@/assets/img/project-tag2-img2.jpg'),
-                title: 'Classic Minimal Bedroom',
-                category: 'Decor / Artchitecture',
-                type: 'Bedroom',
-            },
-            {
-                id: 3,
-                img: require('@/assets/img/project-tag2-img3.jpg'),
-                title: 'Minimal Bedroom table',
-                category: 'Decor / Artchitecture',
-                type: 'Bedroom',
-            },
-            {
-                id: 4,
-                img: require('@/assets/img/project-tag2-img4.jpg'),
-                title: 'Modern Bedroom',
-                category: 'Decor / Artchitecture',
-                type: 'Bedroom',
-            },
-            {
-                id: 5,
-                img: require('@/assets/img/project-tag2-img5.jpg'),
-                title: 'Minimal Bedroom',
-                category: 'Decor / Artchitecture',
-                type: 'Bedroom',
-            },
-            {
-                id: 6,
-                img: require('@/assets/img/project-tag2-img6.jpg'),
-                title: 'Modern Bedroom',
-                category: 'Decor / Artchitecture',
-                type: 'Bedroom',
-            },
-            {
-                id: 7,
-                img: require('@/assets/img/project-tag2-img7.jpg'),
-                title: 'System Table',
-                category: 'Decor / Artchitecture',
-                type: 'Bedroom',
-            },
-            {
-                id: 8,
-                img: require('@/assets/img/project-tag2-img8.jpg'),
-                title: 'Modern Bedroom',
-                category: 'Decor / Artchitecture',
-                type: 'Bedroom',
-            },
-            {
-                id: 9,
-                img: require('@/assets/img/project-tag1-img1.jpg'),
-                title: 'Modern Bathroom',
-                category: 'Decor / Artchitecture',
-                type: "Bathroom",
-            },
-            {
-                id: 10,
-                img: require('@/assets/img/project-tag1-img2.jpg'),
-                title: 'Modern Bathroom',
-                category: 'Decor / Artchitecture',
-                type: "Bathroom",
-            },
-            {
-                id: 11,
-                img: require('@/assets/img/project-tag1-img3.jpg'),
-                title: 'Modern Bathroom',
-                category: 'Decor / Artchitecture',
-                type: "Bathroom",
-            },
-            {
-                id: 12,
-                img: require('@/assets/img/project-tag1-img4.jpg'),
-                title: 'Modern Bathroom',
-                category: 'Decor / Artchitecture',
-                type: "Bathroom",
-            },
-            {
-                id: 13,
-                img: require('@/assets/img/project-tag1-img5.jpg'),
-                title: 'Modern Bathroom',
-                category: 'Decor / Artchitecture',
-                type: "Bathroom",
-            },
-            {
-                id: 14,
-                img: require('@/assets/img/project-tag3-img1.jpg'),
-                title: 'Modern Kitchen',
-                category: 'Decor / Artchitecture',
-                type: "Kitchen",
-            },
-            {
-                id: 15,
-                img: require('@/assets/img/project-tag3-img2.jpg'),
-                title: 'Modern Kitchen',
-                category: 'Decor / Artchitecture',
-                type: "Kitchen",
-            },
-            {
-                id: 16,
-                img: require('@/assets/img/project-tag3-img3.jpg'),
-                title: 'Modern Kitchen',
-                category: 'Decor / Artchitecture',
-                type: "Kitchen",
-            },
-            {
-                id: 17,
-                img: require('@/assets/img/project-tag4-img1.jpg'),
-                title: 'Modern Living Area',
-                category: 'Decor / Artchitecture',
-                type: "Living Area",
-            },
-            {
-                id: 18,
-                img: require('@/assets/img/project-tag4-img2.jpg'),
-                title: 'Modern Living Area',
-                category: 'Decor / Artchitecture',
-                type: "Living Area",
-            },
-            {
-                id: 19,
-                img: require('@/assets/img/project-tag4-img3.jpg'),
-                title: 'Modern Living Area',
-                category: 'Decor / Artchitecture',
-                type: "Living Area",
-            },
-            {
-                id: 20,
-                img: require('@/assets/img/project-tag4-img4.jpg'),
-                title: 'Modern Living Area',
-                category: 'Decor / Artchitecture',
-                type: "Living Area",
-            },
-            {
-                id: 21,
-                img: require('@/assets/img/project-tag4-img5.jpg'),
-                title: 'Modern Living Area',
-                category: 'Decor / Artchitecture',
-                type: "Living Area",
-            },
-            {
-                id: 22,
-                img: require('@/assets/img/project-tag4-img6.jpg'),
-                title: 'Modern Living Room',
-                category: 'Decor / Artchitecture',
-                type: "Living Area",
-            }
-            ],
-            tags: ["Bathroom", "Bedroom", "Kitchen", "Living Area"],
-            currentTag: "Bedroom",
+            
         }
     },
     methods: {
-        filterProject(currentTag) {
-            this.tagProject = [];
-            this.projects.forEach(project => {
-                if (project.type === currentTag) {
-                    this.tagProject.push(project);
-                    this.currentTag = currentTag;
-                }
-            })
-        }
-    }
+        
+        ...mapMutations(['filterProject']),
+        ...mapActions(['']),
+    },
+    computed: { //сразу возвращается и отрисовывается без нажатий
+        ...mapState(['tagProject', 'projects', 'tags', 'currentTag']),
+    },
+
+    
 }
 </script>
 

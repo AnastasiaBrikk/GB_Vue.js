@@ -24,57 +24,58 @@ export default {
     data() {
         return {
             articles: [
-                        {
-                            id: 1,
-                            image: require("@/assets/img/art-news-img1.jpg"),
-                            imgText: "Kitchan Design",
-                            itemTitle: "Let’s Get Solution For Building Construct Work",
-                            itemData: "26 December,2022"
-                        },
-                        {
-                            id: 2,
-                            image: require("@/assets/img/art-news-img2.jpg"),
-                            imgText: "Living Design",
-                            itemTitle: "Low Cost Latest Invented Interior Designing Ideas.",
-                            itemData: "22 December,2022"
-                        },
-                        {
-                            id: 3,
-                            image: require("@/assets/img/art-news-img3.jpg"),
-                            imgText: "Interior Design",
-                            itemTitle: "Best For Any Office & Business Interior Solution",
-                            itemData: "25 December,2022"
-                        },
-                        {
-                            id: 4,
-                            image: require("@/assets/img/art-news-img4.jpg"),
-                            imgText: "Kitchan Design",
-                            itemTitle: "Let’s Get Solution For Building Construct Work",
-                            itemData: "26 December,2022"
-                        },
-                        {
-                            id: 5,
-                            image: require("@/assets/img/art-news-img5.jpg"),
-                            imgText: "Living Design",
-                            itemTitle: "Low Cost Latest Invented Interior Designing Ideas.",
-                            itemData: "22 December,2022"
-                        },
-                        {
-                            id: 6,
-                            image: require("@/assets/img/art-news-img6.jpg"),
-                            imgText: "Interior Design",
-                            itemTitle: "Best For Any Office & Business Interior Solution",
-                            itemData: "25 December,2022"
-                        },
-                    ]
+                {
+                    id: 1,
+                    image: require("@/assets/img/art-news-img1.jpg"),
+                    imgText: "Kitchan Design",
+                    itemTitle: "Let’s Get Solution For Building Construct Work",
+                    itemData: "26 December,2022"
+                },
+                {
+                    id: 2,
+                    image: require("@/assets/img/art-news-img2.jpg"),
+                    imgText: "Living Design",
+                    itemTitle: "Low Cost Latest Invented Interior Designing Ideas.",
+                    itemData: "22 December,2022"
+                },
+                {
+                    id: 3,
+                    image: require("@/assets/img/art-news-img3.jpg"),
+                    imgText: "Interior Design",
+                    itemTitle: "Best For Any Office & Business Interior Solution",
+                    itemData: "25 December,2022"
+                },
+                {
+                    id: 4,
+                    image: require("@/assets/img/art-news-img4.jpg"),
+                    imgText: "Kitchan Design",
+                    itemTitle: "Let’s Get Solution For Building Construct Work",
+                    itemData: "26 December,2022"
+                },
+                {
+                    id: 5,
+                    image: require("@/assets/img/art-news-img5.jpg"),
+                    imgText: "Living Design",
+                    itemTitle: "Low Cost Latest Invented Interior Designing Ideas.",
+                    itemData: "22 December,2022"
+                },
+                {
+                    id: 6,
+                    image: require("@/assets/img/art-news-img6.jpg"),
+                    imgText: "Interior Design",
+                    itemTitle: "Best For Any Office & Business Interior Solution",
+                    itemData: "25 December,2022"
+                },
+            ]
         }
     },
     methods: {
         articlesSlice(number) {
-                const articles = this.articles.slice(0, number);
-                return articles;
-            } 
-    }
+            const articles = this.articles.slice(0, number);
+            return articles;
+        },
+    },
+
 
 }
 </script>

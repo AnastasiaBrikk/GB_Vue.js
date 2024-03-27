@@ -6,7 +6,7 @@
                 readable content of page lookings at its layouts points.</p>
         </div>
         <div class="projects__items">
-            <div v-for="project in projects" :key="project.id" class="projects__item">
+            <div v-for="project in projectsHome" :key="project.id" class="projects__item">
                 <img class="projects__item_img" :src="project.img" alt="project1">
                 <div class="projects__item_dsc">
                     <div class="projects__item_dsc_left">
@@ -22,38 +22,17 @@
 </template>
 
 <script>
+import { mapState, mapGetters } from 'vuex';
 export default {
     data() {
         return {
             btn: require('@/assets/img/projects-item-btn.svg'),
-            projects: [
-                {
-                    id: 1,
-                    img: require("@/assets/img/projects-item1.jpg"),
-                    title: 'Modern Kitchan',
-                    category: 'Decor / Artchitecture',
-                }, 
-                {
-                    id: 2,
-                    img: require("@/assets/img/projects-item2.jpg"),
-                    title: 'Modern Kitchan',
-                    category: 'Decor / Artchitecture',
-                }, 
-                {
-                    id: 3,
-                    img: require("@/assets/img/projects-item3.jpg"),
-                    title: 'Modern Kitchan',
-                    category: 'Decor / Artchitecture',
-                }, 
-                {
-                    id: 4,
-                    img: require("@/assets/img/projects-item4.jpg"),
-                    title: 'Modern Kitchan',
-                    category: 'Decor / Artchitecture',
-                }, 
-
-            ]
+            
         }
+    },
+    computed: { //сразу возвращается и отрисовывается без нажатий
+        ...mapState(['projectsHome']),
+        ...mapGetters(['']) //геттеры всегда что-то возвращают
     },
 
 }
