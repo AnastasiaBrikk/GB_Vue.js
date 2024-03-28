@@ -13,7 +13,7 @@
                         <p class="projects__item_name font-serif">{{project.title}}</p>
                         <p class="projects__item_category font-jost">{{project.category}}</p>
                     </div>
-                    <div class="projects__item_dsc_right"><img :src="btn"></div>
+                    <div class="projects__item_dsc_right"><router-link to="/project/details"><img :src="btn"></router-link></div>
                 </div>
             </div>
         </div>
@@ -37,3 +37,9 @@ export default {
 
 }
 </script>
+
+<style scoped>
+.projects__item_dsc_right img {
+    cursor: pointer;
+}
+</style>

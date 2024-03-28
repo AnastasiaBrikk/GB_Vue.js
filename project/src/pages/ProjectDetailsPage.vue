@@ -1,5 +1,4 @@
 <template>
-    <HeaderComponent/>
     <img :src="img" alt="">
     <main class="main center">
         <div class="projectDetails">
@@ -14,14 +13,13 @@
 
 <script>
 import { mapState} from 'vuex';
-import HeaderComponent from '../components/HeaderComponent.vue';
 import ProjectSwiperComponent from '../components/ProjectSwiperComponent.vue';
-import FooterComponent from '../components/FooterComponent.vue';
+import FooterComponent from '../components/FooterComponent.vue'
+
     export default {
         components: {
-            FooterComponent,
             ProjectSwiperComponent,
-            HeaderComponent,
+            FooterComponent,
         },
         data() {
             return {

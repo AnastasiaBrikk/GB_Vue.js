@@ -25,9 +25,7 @@
             <h3 class="footer__title font-serif">Pages</h3>
             <nav class="footer__nav">
                 <ul class="footer__ul">
-                    <li><a class="footer__li" href="#">Home</a></li>
-                    <li><a class="footer__li" href="#">Project</a></li>
-                    <li><a class="footer__li" href="#">Blog</a></li>
+                    <router-link v-for="link in links" :key="link.id" :to="link.url" class="footer__li">{{ link.title }}</router-link>
                 </ul>
             </nav>
         </div>
@@ -48,6 +46,23 @@
         data() {
             return {
                 logo: require("@/assets/img/Logo.svg"),
+                links: [
+                    {
+                        id: 1,
+                        title: "Home",
+                        url: '/'
+                    },
+                    {
+                        id: 2,
+                        title: "Project",
+                        url: '/project'
+                    },
+                    {
+                        id: 3,
+                        title: "Blog",
+                        url: '/blog'
+                    },
+                ]
             }
         },
     }

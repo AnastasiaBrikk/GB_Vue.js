@@ -15,7 +15,7 @@
                 <p class="projects__item_name font-serif">{{ project.title }}</p>
                 <p class="projects__item_category font-jost">{{ project.category }}</p>
             </div>
-            <div class="projects__item_dsc_right"><a href="#"><img :src="btn"></a></div>
+            <div class="projects__item_dsc_right"><router-link to="/project/details"><img :src="btn"></router-link></div>
         </div>
         </div>
     </div>

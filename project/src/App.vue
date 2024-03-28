@@ -1,26 +1,15 @@
 <template>
-  <HomePage />
-  <BlogPage />
-  <BlogDetails />
-  <ProjectPage />
-  <ProjectDetailsPage/>
+  <HeaderComponent />
+  <RouterView />
 </template>
 
 <script>
-import HomePage from './pages/HomePage.vue';
-import BlogPage from './pages/BlogPage.vue';
-import BlogDetails from './pages/BlogDetails.vue';
-import ProjectPage from './pages/ProjectPage.vue';
-import ProjectDetailsPage from './pages/ProjectDetailsPage.vue'
+import HeaderComponent from './components/HeaderComponent.vue';
 
 export default {
   name: 'App',
   components: {
-    HomePage,
-    BlogPage,
-    BlogDetails,
-    ProjectPage,
-    ProjectDetailsPage,
+    HeaderComponent,
   }
 }
 </script>

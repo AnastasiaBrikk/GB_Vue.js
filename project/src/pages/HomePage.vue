@@ -1,5 +1,4 @@
 <template>
-    <HeaderComponent/>
     <main class="main">
         <div class="banner center">
             <img class="banner__bgimg" :src="banner" alt="banner img">
@@ -66,7 +65,6 @@
 </template>
 
 <script>
-import HeaderComponent from '../components/HeaderComponent.vue'
 import ProjectHomeComponent from '../components/ProjectHomeComponent.vue';
 import ArticlesNewsBlogComponent from '../components/ArticlesNewsBlogComponent.vue';
 import FooterComponent from '../components/FooterComponent.vue'
@@ -80,7 +78,6 @@ import FooterComponent from '../components/FooterComponent.vue'
             }
         },
         components: {
-            HeaderComponent,
             ProjectHomeComponent,
             ArticlesNewsBlogComponent,
             FooterComponent,

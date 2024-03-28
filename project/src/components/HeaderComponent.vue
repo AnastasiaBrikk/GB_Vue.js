@@ -10,9 +10,7 @@
                 <div class="header__right">
                     <nav class="nav">
                         <ul class="nav__list">
-                            <li class="nav__item"><a href="#">Home</a></li>
-                            <li class="nav__item"><a href="#">Project</a></li>
-                            <li class="nav__item"><a href="#">Blog</a></li>
+                            <router-link v-for="link in links" :key="link.id" :to="link.url" class="nav__item">{{ link.title }}</router-link>
                         </ul>
                     </nav>
                 </div>
@@ -26,6 +24,23 @@ export default {
     data() {
         return {
             logo: require("@/assets/img/Logo.svg"),
+            links: [
+                    {
+                        id: 1,
+                        title: "Home",
+                        url: '/'
+                    },
+                    {
+                        id: 2,
+                        title: "Project",
+                        url: '/project'
+                    },
+                    {
+                        id: 3,
+                        title: "Blog",
+                        url: '/blog'
+                    },
+                ]
         }
     },
 }

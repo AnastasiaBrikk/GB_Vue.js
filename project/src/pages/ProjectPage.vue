@@ -1,5 +1,4 @@
 <template>
-    <HeaderComponent />
     <section class="project__top">
         <img :src="topImg" alt="top img" class="project__top_img">
         <div class="project__top_intro">
@@ -10,13 +9,13 @@
     <main class="main center">
             <ArticlesProjectComponent/>
     </main>
-    <FooterComponent />
+    <FooterComponent/>
 </template>
 
 <script>
-import HeaderComponent from '../components/HeaderComponent.vue'
 import ArticlesProjectComponent from '../components/ArticlesProjectComponent.vue';
 import FooterComponent from '../components/FooterComponent.vue'
+
 export default {
     data() {
         return {
@@ -25,7 +24,6 @@ export default {
         }
     },
     components: {
-        HeaderComponent,
         ArticlesProjectComponent,
         FooterComponent,
     }

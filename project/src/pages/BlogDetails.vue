@@ -1,23 +1,21 @@
 <template>
-    <HeaderComponent/>
     <img class="banner-img" :src="bannerImg" alt="banner image">
     <main class="main center">
         <ArticlesComponent/>
     </main>
-    <FooterComponent/>
+    <FooterComponent />
 </template>
 
 <script>
-    import HeaderComponent from '../components/HeaderComponent.vue';
     import ArticlesComponent from '../components/ArticlesComponent.vue';
-    import FooterComponent from '../components/FooterComponent.vue';
+    import FooterComponent from '../components/FooterComponent.vue'
 
 
     export default {
+        name: 'Blog-Details',
         components: {
-            HeaderComponent,
             ArticlesComponent,
-            FooterComponent,
+            FooterComponent
         },
         data() {
             return {

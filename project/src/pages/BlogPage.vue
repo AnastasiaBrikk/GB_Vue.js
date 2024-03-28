@@ -1,5 +1,4 @@
 <template>
-    <HeaderComponent />
     <section class="blog__top">
         <img :src="topImg" alt="top img" class="blog__top_img">
         <div class="blog__top_intro">
@@ -26,11 +25,15 @@
                     </div>
                     <div class="latestPost__date-btn">
                         <p class="latestPost__date font-jost">26 December,2022</p>
-                        <svg width="52" height="53" viewBox="0 0 52 53" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <circle cx="26" cy="26.267" r="26" fill="#F4F0EC" />
-                            <path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36" stroke-width="2"
-                                stroke-linecap="round" stroke-linejoin="round" />
-                        </svg>
+                        <router-link to="/blog/details">
+                            <svg width="52" height="53" viewBox="0 0 52 53" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="26" cy="26.267" r="26" fill="#F4F0EC" />
+                                <path d="M23.7714 32.9527L29.7143 26.267L23.7714 19.5813" stroke="#292F36"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </router-link>
+
                     </div>
                 </div>
             </div>
@@ -44,20 +47,17 @@
             <div class="articlesNews__pagination"></div>
         </section>
     </main>
-
-    <FooterComponent />
+    <FooterComponent/>
 </template>
 
 <script>
-import HeaderComponent from '../components/HeaderComponent.vue';
 import ArticlesNewsBlogComponent from '../components/ArticlesNewsBlogComponent.vue';
-import FooterComponent from '../components/FooterComponent.vue';
+import FooterComponent from '../components/FooterComponent.vue'
 
 export default {
     components: {
-        HeaderComponent,
         ArticlesNewsBlogComponent,
-        FooterComponent,
+        FooterComponent
 
     },
     data() {
